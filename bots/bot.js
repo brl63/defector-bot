@@ -30,7 +30,7 @@ if(round === 0){
   const forgiveRate = memory.myDefectionCount > 2 ? (memory.oppForgiveCount / memory.myDefectionCount) : 0;
 
   // attack after farming if the op is always putting c without attacking 
-  if(round >= 99 && defectionRate < 0.8){
+  if(round >= 119&& defectionRate < 0.8){
     Move = "D";
     return [Move, memory];
   }
@@ -49,8 +49,7 @@ if (round > 50 && memory.myDefectionCount >= 5 && forgiveRate > 0.60){
 
   // strategy for the tit tat bots
   if(oppLastMove === "D"){
-    const forgive = Math.random() < 0.14;
-    Move = forgive ? "C" : "D";
+    Move =  "D";
     return [Move, memory];
   }
 
